@@ -4,7 +4,7 @@ import plotly.express as px
 import datetime
 
 # Load the dataset
-file_path = "datasets\IMDB Top 250 Movies.csv"
+file_path = "datasets/IMDB Top 250 Movies.csv"
 df = pd.read_csv(file_path)
 
 # Sidebar
@@ -23,7 +23,7 @@ if main_content == "Cover Page":
     # Add more content as needed
         
     # Insert Cover Page
-    st.image("images\coverpage.png", use_column_width=True)
+    st.image("images/coverpage.png", use_column_width=True)
 
     #####################################
     # Contribution list
