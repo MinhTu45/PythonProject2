@@ -59,14 +59,14 @@ if main_content == "Cover Page":
 
     # HTML for the project evaluation table
     html_table = """
-    <table style="width:100%; border: 1px solid black; text-align: center;">
+    <table style="width:100%; border: 1px solid white; text-align: center;">
         <tr>
-            <th colspan="3" style="border: 1px solid black; padding: 10px;">Python Project (45%)</th>
+            <th colspan="3" style="border: 1px solid white; padding: 10px;">Python Project (45%)</th>
         </tr>
         <tr>
-            <td style="border: 1px solid black; padding: 10px;padding-bottom: 200px;">Design (15%)</td>
-            <td style="border: 1px solid black; padding: 10px;padding-bottom: 200px;">Content (15%)</td>
-            <td style="border: 1px solid black; padding: 10px;padding-bottom: 200px;">Interactive elements (10%)</td>
+            <td style="border: 1px solid white; padding: 10px;padding-bottom: 200px;">Design (15%)</td>
+            <td style="border: 1px solid white; padding: 10px;padding-bottom: 200px;">Content (15%)</td>
+            <td style="border: 1px solid white; padding: 10px;padding-bottom: 200px;">Interactive elements (10%)</td>
         </tr>
     </table>
     """
