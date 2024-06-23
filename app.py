@@ -133,7 +133,8 @@ else:
     st.dataframe(df_selected, width=1000)
 
 
-    st.header("Have you ever wondered what people's taste in movies has been over the past century? Let's check out our website providing the IMDB Top 250 Movies!")
+    st.header("Have you ever wondered what people's taste in movies has been over the past century?")
+    st.text("Let's check out our website providing the IMDB Top 250 Movies!")
 
     tab1, tab2 = st.tabs(["General relation", "Trending films in year"])
 
