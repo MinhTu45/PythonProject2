@@ -9,7 +9,7 @@ df = pd.read_csv(file_path)
 
 # Sidebar
 with st.sidebar:
-    st.markdown("Author: **Your Name**")  # Change name of author here
+    st.markdown("Group: **14**")  # Change name of author here
     st.write("Date: ", datetime.date.today())
     st.text("Description: This app analyzes the IMDb Top 250 Movies dataset.")
 
@@ -132,8 +132,8 @@ else:
     # Display the original dataset
     st.dataframe(df_selected, width=1000)
 
-    st.header("Rating of Films Analysis by Selected Category")
-    st.text("----")
+
+    st.header("Have you ever wondered what people's taste in movies has been over the past century? Let's check out our website providing the IMDB Top 250 Movies!")
 
     tab1, tab2 = st.tabs(["General relation", "Trending films in year"])
 
@@ -177,7 +177,12 @@ else:
                 fig = px.box(df_genres_expanded, x=by_what, y="rating", color=by_what,
                             labels={by_what: category_mapping[by_what], "rating": "Rating"},
                             title=f"Film Rating by {category_mapping[by_what]}")
-            
+            fig.update_layout(
+                xaxis=dict(
+                    tickangle=-45   
+                ),
+                showlegend=False
+            )
             st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
     #################
@@ -201,6 +206,11 @@ else:
             if not df_year1.empty:
                 fig_year_bar = px.bar(popular_genres_year, x=popular_genres_year.index, y=popular_genres_year.values,
                                     labels={'x': 'Genre', 'y': 'Number of Films'})
+                fig_year_bar.update_layout(
+                    xaxis=dict(
+                        tickangle=-45
+                    )
+                )
                 st.plotly_chart(fig_year_bar, theme="streamlit", use_container_width=True)
             else:
                 st.write(f"No films available for the selected range from {start_year} to {end_year}.")
@@ -208,6 +218,11 @@ else:
         with col2:
             if not df_year1.empty:
                 fig_year_pie = px.pie(popular_genres_year, values=popular_genres_year.values, names=popular_genres_year.index)
+                
+                # Update the layout to place text inside the pie slices
+                fig_year_pie.update_traces(textposition='inside', textinfo='percent+label')
+                fig_year_pie.update_layout(showlegend=False)
+
                 st.plotly_chart(fig_year_pie, theme="streamlit", use_container_width=True)
             else:
                 st.write(f"No films available for the selected range from {start_year} to {end_year}.")
