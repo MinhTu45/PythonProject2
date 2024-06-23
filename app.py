@@ -202,7 +202,7 @@ else:
         popular_genres_year = df_year1['genre'].value_counts().nlargest(10)  # Get top 10 genres for the selected year range
         st.write(f"**Number of Films by Genre from {start_year} to {end_year}:**")
         col1, col2 = st.columns([7, 8])
-
+        
         with col1:
             if not df_year1.empty:
                 fig_year_bar = px.bar(popular_genres_year, x=popular_genres_year.index, y=popular_genres_year.values,
