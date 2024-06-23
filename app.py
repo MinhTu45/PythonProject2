@@ -134,7 +134,7 @@ else:
 
 
     st.header("Have you ever wondered what people's taste in movies has been over the past century?")
-    st.text("Let's check out our website providing the IMDB Top 250 Movies!")
+    st.text("Let's check out our website providing the IMDB Top 250 Movies!😊💕")
 
     tab1, tab2 = st.tabs(["General relation", "Trending films in year"])
 
